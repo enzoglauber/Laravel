@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::get('/customer/list', 'CustomerController@list');
+Route::get('/customer/edit/{_id}', 'CustomerController@edit');
