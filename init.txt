@@ -1,0 +1,17 @@
+CODES:
+php artisan serve //INICIA O SERVER
+
+VERIFICAR:
+https://lumen.laravel.com/ - performace por segundo
+
+
+Mongodb:
+
+https://github.com/jenssegers/laravel-mongodb#installation
+http://php.net/manual/en/mongodb.installation.windows.php
+	-DLL
+	http://pecl.php.net/package/mongodb/1.2.9/windows
+
+
+SCAFOLD:
+https://github.com/marcus-campos/scafold
