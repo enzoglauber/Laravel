@@ -1,7 +1,7 @@
 @extends('main')
 
 @section('content')
-<h1>Controle de estoque</h1>
+<h1>Customer list</h1>
 
 <table class="table">
 	@foreach ($customers as $customer)

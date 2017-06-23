@@ -25,4 +25,15 @@ class CustomerController extends BaseController {
 			return view('customer/edit')->with('customer', $customer[0]);
 		}
 	}
+
+	public function new() {
+		return view('customer/new');
+	}
+
+	public function add() {
+		$name = Request::input('name');
+
+		DB::insert('INSERT INTO customer (name) VALUES (?)', array($name));
+		return view('customer/add')->with('name', $name);
+	}
 }

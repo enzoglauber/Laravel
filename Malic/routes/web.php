@@ -17,3 +17,5 @@ Route::get('/', function () {
 
 Route::get('/customer/list', 'CustomerController@list');
 Route::get('/customer/edit/{_id}', 'CustomerController@edit');
+Route::get('/customer/new', 'CustomerController@new');
+Route::post('/customer/add', 'CustomerController@add');
