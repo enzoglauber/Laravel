@@ -11,4 +11,11 @@
 	</tr>
 	@endforeach
 </table>
+
+@if(old('name'))
+<p class="alert alert-success text-center">
+	Customer({{old('name')}}) added with success!
+</p>
+@endif
+
 @stop

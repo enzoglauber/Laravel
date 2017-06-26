@@ -34,6 +34,11 @@ class CustomerController extends BaseController {
 		$name = Request::input('name');
 
 		DB::insert('INSERT INTO customer (name) VALUES (?)', array($name));
-		return view('customer/add')->with('name', $name);
+		return redirect('customer/list')->withInput();
+	}	
+	
+	public function json(){
+		$customers = DB::select('select * from customer');
+		return response()->json($customers);
 	}
 }
