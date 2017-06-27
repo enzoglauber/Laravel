@@ -7,22 +7,22 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Support\Facades\DB;
 use Request;
+use Malic\Customer;
 
 class CustomerController extends BaseController {
 	public function list() {
-		$customers = DB::select('select * from customer');
+		$customers = Customer::all();
 		return view('customer/list')->with('customers', $customers);
 	}
 
-	public function edit() {
-		$id = Request::route('_id');
-		$customer = DB::select('select * from customer where _id = ?', [$id]);
-		// dd($customer);
-
+	public function edit($id) {
+		// $id = Request::route('_id');
+		$customer = Customer::find($id);
+		// 
 		if (empty($customer)) {
 			return "Esse cliente nao existe";
 		} else {
-			return view('customer/edit')->with('customer', $customer[0]);
+			return view('customer/edit')->with('customer', $customer);
 		}
 	}
 
@@ -31,11 +31,16 @@ class CustomerController extends BaseController {
 	}
 
 	public function add() {
-		$name = Request::input('name');
-
-		DB::insert('INSERT INTO customer (name) VALUES (?)', array($name));
+		Customer::create(Request::all());
 		return redirect('customer/list')->withInput();
 	}	
+	
+	public function remove($id){
+		// $id = Request::route('_id');
+		$customer = Customer::find($id);
+		$customer->delete();
+		return redirect()->action('CustomerController@list');
+	}
 	
 	public function json(){
 		$customers = DB::select('select * from customer');
