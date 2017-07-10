@@ -1,5 +1,10 @@
 CODES:
 php artisan serve //INICIA O SERVER
+php artisan make:migration nome_da_migration //para criar a migrations
+php artisan migrate //para executar 
+php artisan make:request //cria um FormRequest
+
+
 
 VERIFICAR:
 https://lumen.laravel.com/ - performace por segundo

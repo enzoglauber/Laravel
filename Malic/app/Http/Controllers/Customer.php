@@ -7,7 +7,9 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Support\Facades\DB;
 use Request;
+use Validator;
 use Malic\Customer;
+use Malic\Http\Requests\CustomerRequest;
 
 class CustomerController extends BaseController {
 	public function list() {
@@ -30,8 +32,8 @@ class CustomerController extends BaseController {
 		return view('customer/new');
 	}
 
-	public function add() {
-		Customer::create(Request::all());
+	public function add( CustomerRequest $request ) {
+		Customer::create($request->all());
 		return redirect('customer/list')->withInput();
 	}	
 	
