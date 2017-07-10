@@ -25,6 +25,7 @@
 		<label for="email">Email</label>
 		<input type="email" class="form-control" id="email" name="email" placeholder="Email" value="{{ old('email') }}">
 	</div>
+	
 	<button type="submit" class="btn btn-success">Save</button>
 </form>
 @stop
