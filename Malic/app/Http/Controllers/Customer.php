@@ -8,10 +8,16 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Support\Facades\DB;
 use Request;
 use Validator;
+use Auth;
 use Malic\Customer;
 use Malic\Http\Requests\CustomerRequest;
 
 class CustomerController extends BaseController {
+	public function __construct()
+	{
+		$this->middleware('my.auth');
+	}
+
 	public function list() {
 		$customers = Customer::all();
 		return view('customer/list')->with('customers', $customers);
