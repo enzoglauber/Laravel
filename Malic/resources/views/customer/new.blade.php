@@ -26,6 +26,15 @@
 		<input type="email" class="form-control" id="email" name="email" placeholder="Email" value="{{ old('email') }}">
 	</div>
 
+	<div class="form-group">
+		<label for="_seller">Vendedor</label>
+		<select type="text" class="form-control" id="_seller" name="_seller" placeholder="Vendedor">
+			@foreach($sellers as $seller)
+			<option value="{{$seller->id}}">{{$seller->name}}</option>
+			@endforeach
+		</select>
+	</div>
+
 	<button type="submit" class="btn btn-success">Save</button>
 </form>
 @stop

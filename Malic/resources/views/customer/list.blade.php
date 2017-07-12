@@ -8,6 +8,7 @@
 	<tr>
 		<td>{{$customer->name}}</td>
 		<td>{{$customer->email}}</td>
+		<td>{{$customer->seller->name}}</td>
 		<td><a href="/customer/edit/{{$customer->id}}" ><span class="glyphicon glyphicon-pencil"></span> Edit</a></td>
 		<td><a href="/customer/remove/{{$customer->id}}" ><span class="glyphicon glyphicon-trash"></span></a></td>
 	</tr>

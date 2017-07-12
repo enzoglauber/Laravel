@@ -10,6 +10,7 @@ use Request;
 use Validator;
 use Auth;
 use Malic\Customer;
+use Malic\Seller;
 use Malic\Http\Requests\CustomerRequest;
 
 class CustomerController extends BaseController {
@@ -35,7 +36,7 @@ class CustomerController extends BaseController {
 	}
 
 	public function new() {
-		return view('customer/new');
+		return view('customer/new')->with('sellers', Seller::all());
 	}
 
 	public function add( CustomerRequest $request ) {
