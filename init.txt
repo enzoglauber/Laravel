@@ -8,6 +8,13 @@ php artisan make:middleware
 
 php artisan db:seed --class=SellerSeeder
 
+php artisan down //	coloca em modo manutenção
+php artisan up //	volta online
+php artisan tinker // executa o modo command do laravel
+php artisan route:list // mostra a lista de rotas ativas
+php artisan list // mostra a lista comandos possiveis do laravel
+php artisan inspire // exibe a frase motivacional
+
 
 
 VERIFICAR:

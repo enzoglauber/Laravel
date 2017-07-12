@@ -8,6 +8,6 @@ class Seller extends Model
 {
 	public function customer()
 	{
-		return $this->hasMany('Malic\Customer', '_seller', 'id');
+		return $this->hasMany('Malic\Customer', '_seller', '_id');
 	}
 }
