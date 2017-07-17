@@ -1,5 +1,9 @@
 CODES:
 composer create-project --prefer-dist laravel/laravel APP_NAME
+
+composer create-project jaesung2061/anvel angular4-laravel5
+npm install @angular/cdk
+
 php artisan serve //INICIA O SERVER
 php artisan make:model NOME_DO_MODELO -c -m // cria o modelo com a migration eo controller
 php artisan make:migration NOME_DA_MIGRATION //para criar a migrations
